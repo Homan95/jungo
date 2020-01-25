@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block html_title %}
+	{{bott.name}} - бот
+{% endblock html_title %}
+
+{% block content %}
+
+	<h1>Боти:</h1>
+	<ul>
+		<h1>{{bott.name}} - бот</h1>	
+		<b>{{bott.description}}</b>
+		<p>Автор - {{bot.autor.name}}</p>		
+	</ul>  
+	
+{% endblock content %}

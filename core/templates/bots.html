@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block html_title %}
+	Ботів сторінка
+{% endblock html_title %}
+
+{% block content %}
+
+	<h1>Боти:</h1>
+	<ul>
+		{% for bot in bots %}
+	
+		<li><a href="https://web.telegram.org/#/im?p={{bot.bot_name}}" target="_blank">
+		<img src="https://cdn3.iconfinder.com/data/icons/social-media-chamfered-corner/154/telegram-512.png" width="16px" height="16px" title="Telegram_bot: {{bot.name}}" alt="Telegram icon">
+		<b>{{bot.name}}</b>
+		</a><br/>{{bot.description}}<hr/>
+		</li>
+		<a href="/bots?autor={{bot.autor.name}}">
+			<b>{{bot.autor.name}}</b>			
+		</a>
+
+		{% empty %}
+		<li>No subjects yet</li>
+		{% endfor %}
+
+
+	</ul>  
+	
+{% endblock content %}

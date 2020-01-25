@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+	<form action="/contus/" method="POST">
+		{% csrf_token %}
+		{{form.as_p}}
+		<div>
+		 <button type="submit">Submit</button>	
+		</div>
+	</form>
+	<p>Last message - {{message}}</p>
+{% endblock content %}
+
+{% block html_title %}
+	Contact us
+{% endblock html_title %}

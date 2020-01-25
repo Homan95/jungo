@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+	
+	<p>База фідбеків:</p>
+	<ul>
+	{% if has %}
+	<p>дякую за відгук</p>
+	{% endif %}
+	{% for feedback in feedbacks %}
+		<li>{{ feedback.name }} - {{feedback.text}}</li>
+
+	{% empty %}
+		<li>Немає відгуків, будь першим</li>
+	{% endfor %}
+	</ul>
+{% endblock content %}
+
+{% block html_title %}
+	База фідбеків
+{% endblock html_title %}
